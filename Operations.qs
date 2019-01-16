@@ -10,6 +10,10 @@
         using (qs = Qubit[8])
         {
             DoQFT(qs);
+            
+            // Do something
+
+            ResetAll(qs);
         }
     }
 
@@ -24,6 +28,5 @@
                 (Controlled R1)([control], (PI() / PowD(2.0, ToDouble(j - i)), target));
             }
         }
-        ResetAll(qs);
     }
 }
