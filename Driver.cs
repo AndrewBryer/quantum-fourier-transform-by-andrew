@@ -3,7 +3,7 @@
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
 
-namespace QFT
+namespace Shor
 {
     class Driver
     {
@@ -11,7 +11,7 @@ namespace QFT
         {
             using (var qsim = new QuantumSimulator())
             {                
-                QFT.Run(qsim).Wait();
+                Shor.Run(qsim).Wait();
             }
         }
     }

@@ -1,23 +1,23 @@
-﻿namespace QFT
+﻿namespace Shor
 {
     open Microsoft.Quantum.Primitive;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Extensions.Math;
     open Microsoft.Quantum.Extensions.Convert;
 
-    operation QFT () : Unit
+    // Currently doesn't do Shor's algorithm but just calls the QFT
+    operation Shor () : Unit
     {
         using (qs = Qubit[8])
         {
-            DoQFT(qs);
-            
-            // Do something
+            QFT(qs);
 
             ResetAll(qs);
         }
     }
 
-    operation DoQFT (qs: Qubit[]) : Unit
+    // This takes in a register of Qubits in Big Endian format, that is, with the most significant bit in the position 0
+    operation QFT (qs: Qubit[]) : Unit
     {
         for (i in 0..Length(qs) - 1)
         {
