@@ -3,7 +3,7 @@
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
 
-namespace Shor
+namespace FindPeriod
 {
     class Driver
     {
@@ -11,7 +11,7 @@ namespace Shor
         {
             using (var qsim = new QuantumSimulator())
             {                
-                Shor.Run(qsim).Wait();
+                FindPeriod.Run(qsim).Wait();
             }
         }
     }
