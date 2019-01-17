@@ -5,11 +5,15 @@
     open Microsoft.Quantum.Extensions.Math;
     open Microsoft.Quantum.Extensions.Convert;
 
-    // Currently doesn't do Shor's algorithm but just calls the QFT
+    // Currently doesn't find period but just calls the adjoint QFT
     operation FindPeriod () : Unit
     {
         using (qs = Qubit[8])
         {
+            ApplyToEach(H, qs);
+
+            // Apply the function f to the register qs and put that result in some other register that needs to be initialised
+
             Adjoint QFT(qs);
 
             ResetAll(qs);
